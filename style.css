@@ -348,3 +348,15 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* --- ESTILOS PARA LA SECCIÓN "QUÉ OFREZCO" --- */
+#que-ofrezco {
+    border: 1px solid transparent;
+    border-image: linear-gradient(to right, var(--color-primario), #94a3b8);
+    border-image-slice: 1;
+    box-shadow: 0 0 20px rgba(13, 110, 253, 0.1);
+}
+
+#que-ofrezco h3 {
+    margin-top: 0;
+}

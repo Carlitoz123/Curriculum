@@ -124,6 +124,25 @@
         #que-ofrezco h2 {
             color: #ffffff; /* Título en blanco */
         }
+        /* Nuevos estilos para la lista de servicios en "Qué ofrezco" */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+        }
+        .service-item {
+            background-color: var(--color-tarjetas); /* Reutilizando el color de fondo de las tarjetas */
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-primario);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
     </style>
 </head>
 <body>
@@ -236,20 +255,18 @@
                     </div>
                 </div>
 
-                <div class="carousel-slide">
-                    <img src="https://via.placeholder.com/400x250" alt="Imagen del Proyecto 2">
+                <div class="carousel-slide"
+                     data-title="RAVINE - E-commerce de Ropa Urbana"
+                     data-description="RAVINE es un prototipo de e-commerce para una marca de ropa urbana dirigida a jóvenes. El diseño se enfoca en una estética moderna y minimalista, con una navegación intuitiva que permite a los usuarios explorar las nuevas colecciones, ver productos y simular un proceso de compra. El proyecto incluye la página de inicio, vistas de productos y formularios de inicio de sesión y registro."
+                     data-images='["img/proyecto2/1.png", "img/proyecto2/2.png", "img/proyecto2/3.png", "img/proyecto2/4.png"]'>
                     <div class="project-info">
-                        <h3>Nombre del Proyecto 2</h3>
-                        <p>Descripción detallada del proyecto 2.</p>
-                        <a href="#" class="project-link" target="_blank">Ver Proyecto en Vivo <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="https://via.placeholder.com/400x250" alt="Imagen del Proyecto 3">
-                    <div class="project-info">
-                        <h3>Nombre del Proyecto 3</h3>
-                        <p>Descripción detallada del proyecto 3.</p>
-                        <a href="#" class="project-link" target="_blank">Ver Proyecto en Vivo <i class="fas fa-external-link-alt"></i></a>
+                        <div class="project-image-gallery">
+                            <!-- Cambia esta imagen por una vista previa de tu proyecto 2 -->
+                            <img src="img/proyecto2/1.png" alt="Vista previa del proyecto RAVINE" style="height: 250px; object-fit: cover; width: 100%;">
+                        </div>
+                        <h3>RAVINE - E-commerce de Ropa Urbana</h3>
+                        <p>Prototipo de e-commerce para una marca de ropa urbana, enfocado en una estética moderna y una experiencia de usuario fluida.</p>
+                        <button class="cta-button open-modal-btn">Ver Detalles</button>
                     </div>
                 </div>
                 <button class="carousel-button prev">&#10094;</button>
@@ -308,20 +325,20 @@
         
         <section id="que-ofrezco" class="container">
             <h2>Qué ofrezco</h2>
-            <div class="skills-container"> <!-- Reutilizando la clase para un estilo consistente -->
-                <div class="skills-category">
+            <ul class="services-grid">
+                <li class="service-item">
                     <h3>Desarrollo Web a Medida</h3>
                     <p>Creación de sistemas y páginas web funcionales.</p>
-                </div>
-                <div class="skills-category">
+                </li>
+                <li class="service-item">
                     <h3>Consultoría de Procesos</h3>
                     <p>Elaboración de manuales de operación y estandarización de trámites.</p>
-                </div>
-                <div class="skills-category">
+                </li>
+                <li class="service-item">
                     <h3>Soporte Técnico</h3>
                     <p>Mantenimiento de equipos y optimización de redes domésticas/oficina.</p>
-                </div>
-            </div>
+                </li>
+            </ul>
         </section>
         
         <section id="contacto" class="container">
