@@ -1,14 +1,19 @@
 /* --- VARIABLES DE COLOR Y FUENTES (¡Personaliza aquí!) --- */
 :root {
-    --color-primario: #007BFF; /* Azul vibrante - ideal para botones y enlaces */
-    --color-fondo: #f8f9fa; /* Un gris muy claro para el fondo general */
-    --color-tarjetas: #ffffff; /* Blanco para las tarjetas de proyectos */
-    --color-texto-principal: #212529; /* Negro suave para el texto */
-    --color-texto-secundario: #6c757d; /* Gris para subtítulos y texto menos importante */
+    --color-primario: #0d6efd; /* Azul vibrante - ideal para botones y enlaces */
+    --color-fondo: #0f172a; /* Azul oscuro/casi negro para el fondo */
+    --color-tarjetas: #1e293b; /* Azul grisáceo para las tarjetas */
+    --color-texto-principal: #f1f5f9; /* Blanco suave para el texto principal */
+    --color-texto-secundario: #94a3b8; /* Gris claro para subtítulos y texto secundario */
     --fuente-principal: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* --- ESTILOS GENERALES --- */
+html {
+    /* Aumenta el tamaño de fuente base de toda la página (el valor por defecto es 16px) */
+    font-size: 17px; 
+}
+
 body {
     font-family: var(--fuente-principal);
     margin: 0;
@@ -102,6 +107,11 @@ a:hover {
     flex: 1;
 }
 
+.sobre-mi-texto h3 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--color-primario);
+    padding-bottom: 0.5rem;
+}
 /* Responsive para la sección sobre mí */
 @media (max-width: 768px) {
     .sobre-mi-flex {
@@ -110,58 +120,121 @@ a:hover {
     }
 }
 
-/* --- SECCIÓN DE PROYECTOS --- */
-.project-grid {
+/* --- SECCIÓN EDUCACIÓN --- */
+.education-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
-.project-card {
+.education-item {
+    background-color: var(--color-tarjetas);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+    border-left: 5px solid var(--color-primario);
+}
+
+.education-item h4 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.education-item p {
+    margin-bottom: 0.5rem;
+}
+
+.education-date {
+    color: var(--color-texto-secundario);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+
+/* --- SECCIÓN DE PROYECTOS --- */
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
     background-color: var(--color-tarjetas);
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 25px rgba(0,0,0,0.2);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+.carousel-slide {
+    display: none; /* Oculto por defecto */
+    animation: fade 0.5s ease-in-out;
 }
 
-.project-card img {
+.carousel-slide img {
     width: 100%;
-    height: 200px;
+    height: 400px; /* Altura de la imagen del carrusel */
     object-fit: cover;
 }
 
-.project-card h3 {
+.project-info {
+    padding: 1.5rem 2rem 2rem;
+}
+
+.project-info h3 {
     padding: 1.5rem 1.5rem 0.5rem;
     margin: 0;
+    text-align: center;
+    font-size: 1.8rem;
 }
 
-.project-card p {
+.project-info p {
     padding: 0 1.5rem;
     color: var(--color-texto-secundario);
+    text-align: center;
 }
 
-.project-link {
-    display: inline-block;
-    padding: 1rem 1.5rem;
+/* Botones de navegación del carrusel */
+.carousel-button {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
     font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.4);
+    border: none;
 }
 
-.project-link i {
-    margin-left: 0.5rem;
-    transition: transform 0.3s ease;
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
-.project-link:hover i {
-    transform: translateX(5px);
+.carousel-button:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
 }
 
 /* --- SECCIÓN DE HABILIDADES --- */
+.skills-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.skills-category h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
 .skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -201,6 +274,11 @@ a:hover {
     position: relative;
 }
 
+.timeline-item ul {
+    padding-left: 20px;
+    margin-top: 1rem;
+}
+
 .timeline-item::before {
     content: '';
     position: absolute;
@@ -209,7 +287,7 @@ a:hover {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: var(--color-primario);
+    background-color: var(--color-fondo);
     border: 3px solid var(--color-fondo);
     z-index: 1;
     transform: translateX(9px);
@@ -221,6 +299,13 @@ a:hover {
     margin-top: -0.5rem;
     font-style: italic;
 }
+
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* --- SECCIÓN DE CONTACTO --- */
 #contacto {
@@ -248,7 +333,7 @@ a:hover {
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #e9ecef;
+    background-color: #1e293b;
     color: var(--color-texto-secundario);
 }
 

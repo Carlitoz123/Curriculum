@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="style.css">
     <!-- Enlace a un set de iconos (Font Awesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .profile-pic {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
 </head>
 <body>
     <header class="hero">
@@ -22,10 +28,15 @@
         <section id="sobre-mi" class="container">
             <h2>Sobre Mí</h2>
             <div class="sobre-mi-flex">
-                <img src="https://via.placeholder.com/250" alt="Foto de Carlos Octavio Eguino Galvez" class="profile-pic">
+                <img src="img/profile.jpeg" alt="Foto de Carlos Octavio Eguino Galvez" class="profile-pic" />
                 <div class="sobre-mi-texto">
+                    <h3>Perfil Profesional</h3>
                     <p>
-                        Soy un Ingeniero en Sistemas Computacionales con una gran pasión por el desarrollo Frontend y el diseño de interfaces. Me especializo en la creación de experiencias de usuario atractivas y funcionales, combinando mi formación técnica con un ojo para la estética. Actualmente, aplico mis habilidades en la Presidencia Municipal de Nuevo Casas Grandes, buscando siempre nuevos retos para crecer profesionalmente.
+                        Ingeniero en Sistemas Computacionales con sólida formación técnica y experiencia 
+                        en la gestión administrativa dentro del sector público. Me caracterizo por ser proactivo 
+                        y organizado, con capacidad para el manejo de relaciones interpersonales y atención al usuario. 
+                        Busco una oportunidad desafiante donde pueda aplicar mis conocimientos en tecnología 
+                        y optimización de procesos.
                     </p>
                 </div>
             </div>
@@ -34,54 +45,102 @@
         <section id="experiencia" class="container">
             <h2>Experiencia Laboral</h2>
             <div class="timeline">
-                <!-- Ejemplo de un puesto de trabajo -->
                 <div class="timeline-item">
-                    <h3>Ingeniero de Software / Desarrollador Frontend</h3>
-                    <p class="timeline-info"><strong>Presidencia Municipal de Nuevo Casas Grandes</strong> | Enero 2023 - Presente</p>
-                    <p>Aquí puedes describir tus responsabilidades, los proyectos en los que trabajaste y los logros que obtuviste. Intenta usar viñetas para que sea más fácil de leer.</p>
+                    <h3>Encargado de Oficina</h3>
+                    <p class="timeline-info"><strong>Ayuntamiento Municipal de Nuevo Casas Grandes</strong> | Ene 2023 - 2025</p>
+                    <ul>
+                        <li>Gestión y asesoría empresarial para el desarrollo local.</li>
+                        <li>Responsable del proceso de registro de marcas y propiedad intelectual.</li>
+                        <li>Coordinación administrativa y atención directa a ciudadanos.</li>
+                    </ul>
                 </div>
-                <!-- Puedes copiar y pegar el bloque 'timeline-item' para añadir más experiencias -->
+                <div class="timeline-item">
+                    <h3>Soporte Administrativo y Mantenimiento</h3>
+                    <p class="timeline-info"><strong>[Nombre de la Empresa Anterior]</strong></p>
+                    <ul>
+                        <li>Mantenimiento y soporte preventivo de equipos electrónicos.</li>
+                        <li>Gestión de conmutador y recepción de clientes (Mesa de entradas).</li>
+                        <li>Control de bitácoras de entrada/salida y organización de archivo físico/digital.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="educacion" class="container">
+            <h2>Formación Académica</h2>
+            <div class="education-grid">
+                <div class="education-item">
+                    <h4>Ingeniería en Sistemas Computacionales</h4>
+                    <p><strong>Tecnológico Superior de Nuevo Casas Grandes</strong></p>
+                    <p class="education-date">2023 - 2025</p>
+                </div>
+                <div class="education-item">
+                    <h4>Certificaciones</h4>
+                    <p><strong>Tecnológico Superior de Nuevo Casas Grandes</strong></p>
+                    <p>Especialidad en [Nombre de la certificación]</p>
+                </div>
+                <div class="education-item">
+                    <h4>Título Técnico</h4>
+                    <p><strong>CETIS</strong></p>
+                    <p class="education-date">Graduado 2018</p>
+                    <p><em>Diploma al Alumno Destacado</em></p>
+                </div>
+                <div class="education-item">
+                    <h4>Inglés Intermedio 5</h4>
+                    <p><strong>[Insitituto Tecnologico de Nuevo Casas Grandes]</strong> - </p>
+                    <p class="education-date">19 de mayo de 2024</p>
+                    <p><a href="certificados/Certificado ingles TECNM.pdf" target="_blank" class="certificate-link">Ver Certificado <i class="fas fa-external-link-alt"></i></a></p>
+                </div>
             </div>
         </section>
 
         <section id="proyectos" class="container">
             <h2>Mis Proyectos</h2>
-            <div class="project-grid">
-                <!-- Proyecto 1 -->
-                <div class="project-card">
+            <div class="carousel-container">
+                <div class="carousel-slide">
                     <img src="https://via.placeholder.com/400x250" alt="Imagen del Proyecto 1">
-                    <h3>Nombre del Proyecto 1</h3>
-                    <p>Una breve descripción de tu proyecto, las tecnologías que usaste y el problema que resolviste.</p>
-                    <a href="#" target="_blank" class="project-link">Ver Proyecto <i class="fas fa-arrow-right"></i></a>
+                    <div class="project-info">
+                        <h3>Nombre del Proyecto 1</h3>
+                        <p>Aquí puedes poner una descripción mucho más detallada de tu proyecto. Habla sobre el proceso de desarrollo, los retos y las soluciones implementadas. Puedes incluir imágenes, listas y enlaces.</p>
+                        <a href="#" class="project-link" target="_blank">Ver Proyecto en Vivo <i class="fas fa-external-link-alt"></i></a>
+                    </div>
                 </div>
-
-                <!-- Proyecto 2 -->
-                <div class="project-card">
+                <div class="carousel-slide">
                     <img src="https://via.placeholder.com/400x250" alt="Imagen del Proyecto 2">
-                    <h3>Nombre del Proyecto 2</h3>
-                    <p>Una breve descripción de tu proyecto, las tecnologías que usaste y el problema que resolviste.</p>
-                    <a href="#" target="_blank" class="project-link">Ver Proyecto <i class="fas fa-arrow-right"></i></a>
+                    <div class="project-info">
+                        <h3>Nombre del Proyecto 2</h3>
+                        <p>Descripción detallada del proyecto 2.</p>
+                        <a href="#" class="project-link" target="_blank">Ver Proyecto en Vivo <i class="fas fa-external-link-alt"></i></a>
+                    </div>
                 </div>
-
-                <!-- Proyecto 3 (puedes añadir más) -->
-                <div class="project-card">
+                <div class="carousel-slide">
                     <img src="https://via.placeholder.com/400x250" alt="Imagen del Proyecto 3">
-                    <h3>Nombre del Proyecto 3</h3>
-                    <p>Una breve descripción de tu proyecto, las tecnologías que usaste y el problema que resolviste.</p>
-                    <a href="#" target="_blank" class="project-link">Ver Proyecto <i class="fas fa-arrow-right"></i></a>
+                    <div class="project-info">
+                        <h3>Nombre del Proyecto 3</h3>
+                        <p>Descripción detallada del proyecto 3.</p>
+                        <a href="#" class="project-link" target="_blank">Ver Proyecto en Vivo <i class="fas fa-external-link-alt"></i></a>
+                    </div>
                 </div>
+                <button class="carousel-button prev">&#10094;</button>
+                <button class="carousel-button next">&#10095;</button>
             </div>
         </section>
 
         <section id="habilidades" class="container">
-            <h2>Habilidades Técnicas</h2>
-            <div class="skills-list">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JavaScript</span>
-                <span>Python</span>
-                <span>Java</span>
-                <span>Git</span>
+            <h2>Idiomas y Habilidades</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Habilidades</h3>
+                    <div class="skills-list">
+                        <span>Soporte Técnico y Mantenimiento</span>
+                        <span>Gestión Administrativa</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Idiomas</h3>
+                    <p><strong>Español:</strong> Nativo</p>
+                    <p><strong>Inglés:</strong> Nivel Básico-Intermedio (Técnico)</p>
+                </div>
             </div>
         </section>
 

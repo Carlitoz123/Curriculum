@@ -29,9 +29,35 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Observar todas las secciones y tarjetas de proyecto
-    const elementsToAnimate = document.querySelectorAll('.container, .project-card');
+    const elementsToAnimate = document.querySelectorAll('.container');
     elementsToAnimate.forEach(el => {
         el.classList.add('hidden-initial'); // Añade una clase para el estado inicial
         observer.observe(el);
     });
+
+    // --- LÓGICA DEL CARRUSEL DE PROYECTOS ---
+    let slideIndex = 1;
+    const slides = document.getElementsByClassName("carousel-slide");
+    if (slides.length > 0) {
+        showSlides(slideIndex);
+
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+
+        prevButton.addEventListener('click', () => plusSlides(-1));
+        nextButton.addEventListener('click', () => plusSlides(1));
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    }
 });
