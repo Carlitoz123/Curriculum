@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Certificado</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50; /* Un fondo oscuro y profesional */
+            display: flex;
+            flex-direction: column; /* Organiza los elementos verticalmente */
+            color: #ecf0f1;
+            font-family: sans-serif;
+            overflow: hidden; /* Oculta el desbordamiento para que los aplausos no generen scroll */
+        }
+
+        .viewer-container {
+            flex-grow: 1; /* Ocupa el espacio restante */
+        }
+
+        .pdf-viewer {
+            /* El iframe ocupa todo el espacio de su contenedor */
+            width: 100%; 
+            height: 100%;
+            border: none; /* Sin bordes en el iframe */
+        }
+
+        .clap-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, background-color 0.2s;
+            z-index: 1000;
+        }
+
+        .clap-button:hover {
+            background-color: #2980b9;
+            transform: scale(1.1);
+        }
+
+        .clap {
+            position: absolute;
+            font-size: 24px;
+            animation: fly-up 1.5s ease-out forwards;
+            pointer-events: none; /* Para que no interfieran con el clic */
+        }
+
+        @keyframes fly-up {
+            from {
+                transform: translateY(0) scale(1.2);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-300px) scale(0.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="viewer-container">
+        <iframe src="certificados/Certificado ingles TECNM.pdf" class="pdf-viewer" title="Certificado de Inglés"></iframe>
+    </div>
+
+    <button id="clapBtn" class="clap-button">👏</button>
+
+    <script>
+        const clapBtn = document.getElementById('clapBtn');
+
+        clapBtn.addEventListener('click', () => {
+            // Aumentamos el número de aplausos para que llenen la pantalla
+            for (let i = 0; i < 15; i++) {
+                const clap = document.createElement('span');
+                clap.textContent = '👏';
+                clap.className = 'clap';
+
+                // Posición inicial aleatoria en cualquier parte de la pantalla
+                clap.style.left = Math.random() * 95 + 'vw'; // Usamos 95 para que no se peguen al borde
+                clap.style.top = Math.random() * 95 + 'vh';
+
+                // Asignamos un delay aleatorio a la animación para un efecto más natural
+                clap.style.animationDelay = Math.random() * 0.2 + 's';
+                
+                document.body.appendChild(clap);
+
+                // Eliminar el elemento del DOM después de la animación
+                setTimeout(() => {
+                    clap.remove();
+                }, 1500);
+            }
+        });
+    </script>
+</body>
+</html>
